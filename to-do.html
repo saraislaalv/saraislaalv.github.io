@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>To Do List</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@300&family=Roboto+Mono&family=Roboto+Slab:wght@300&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <a href="index.html" class="index">Mitt liv</a>
+    
+            <div class="sidesider">
+                <a href="#">To-do liste</a>
+                <a href="prøveplan.html">Prøveplan</a>
+                <a href="timeplan.html">Timeplan</a>
+            </div>
+        </nav>
+
+        <div class="containerInput">
+            <form>
+                <input type="text" id="oppgaveInput" placeholder="Skriv inn oppgave her">
+                <button type="button" id="leggTil-event-btn">Legg til</button>
+            </form>
+
+            <h2>Ting jeg må gjøre:</h2>
+            <ul id="oppgaveListe"> </ul>
+        </div>
+
+        <footer class="undersider">
+            <!-- Venstre side av footeren -->
+            <div class="footer-left">
+              <h3>Sara Alvestad Isla</h3>
+              <a href="https://viken.no/nadderud-vgs/">Nadderud VGS</a>
+            </div>
+          
+            <!-- Høyre side av footeren -->
+            <div class="footer-right">
+              <p>2023</p>
+            </div>
+          </footer>
+          
+          
+        <script src="to-do.js"></script>
+    </body>
+    </html>

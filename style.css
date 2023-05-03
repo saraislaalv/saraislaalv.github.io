@@ -1,0 +1,649 @@
+/* En primærfarge jeg kan referere til i hele cssen */
+:root {
+    --primary-clr: #ffa101;
+  }
+  /* Overskriver alle kode i hele dokumentet */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
+  }
+  body{
+    background-color: #eceae7;
+    font-family: 'Roboto mono', serif;;
+  }
+  main {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+  }
+  .container {
+    position: relative;
+    width: 1200px;
+    min-height: 850px;
+    margin: 0 auto;
+    padding: 5px;
+    color: #fff;
+    display: flex;
+    border-radius: 10px;
+    background-color: #31525B;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  .containerInput {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 5%;
+    }
+    /* høyre side */
+  .høyre {
+    width: 60%;
+    padding: 20px;
+  }
+  /* venstre side */
+ .venstre {
+    position: relative;
+    width: 50%;
+    min-height: 100%;
+    padding: 20px 0;
+  }
+  /* Alt innenfor klassen kalender */
+  .kalender {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: #878895;
+    border-radius: 5px;
+    background-color: #FFFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  /* Måneder */
+  .kalender .month {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  .kalender .month .forrige,
+  .kalender .month .neste {
+    cursor: pointer;
+  }
+  .kalender .month .forrige:hover,
+  .kalender .month .neste:hover {
+    color: var(--primary-clr);
+  }
+  /* Ukedager */
+  .kalender .ukedager {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  .ukedager div {
+    width: 14.28%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* Dager */
+  .kalender .dager {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  .kalender .dager .dag {
+    width: 14.28%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--primary-clr);
+    border: 1px solid #f5f5f5;
+  }
+  .kalender .dager .forrige-dato,
+  .kalender .dager .neste-dato {
+    color: #b3b3b3;
+  }
+  .kalender .dager .active {
+    position: relative;
+    font-size: 2rem;
+    color: #fff;
+    background-color: var(--primary-clr);
+  }
+  /* Dagens dato i kalenderen */
+  .kalender .dager .today {
+    font-size: 2rem;
+  }
+  /* Hendelsene i kalenderen */
+  .kalender .dager .event {
+    position: relative;
+  }
+  .kalender .dager .event::after {
+    content: "";
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    width: 75%;
+    height: 6px;
+    border-radius: 30px;
+    transform: translateX(-50%);
+    background-color: var(--primary-clr);
+  }
+  .kalender .dager .dag:hover.event::after {
+    background-color: #fff;
+  }
+  .calendar .dager .active.event {
+    padding-bottom: 10px;
+  }
+  /* idag-knappen i kalenderen */
+  .kalender .idag {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    color: var(--primary-clr);
+  }
+  .kalender .idag button {
+    padding: 5px 10px;
+    border: 1px solid var(--primary-clr);
+    border-radius: 5px;
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--primary-clr);
+  }
+  .kalender .idag button:hover {
+    color: #fff;
+    background-color: var(--primary-clr);
+  }
+  /* Dagens dato på venstre side*/
+  .venstre .idag-dato {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    padding-left: 70px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+  }
+  .venstre .idag-dato {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffff;
+  }
+  /* Hendelsene på venstre side */
+  .events {
+    width: 100%;
+    height: 100%;
+    max-height: 600px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding-left: 4px;
+  }
+  .events .event {
+    position: relative;
+    width: 95%;
+    min-height: 70px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0 20px;
+    padding-left: 50px;
+    color: #fff;
+    background: linear-gradient(90deg, #243d44, transparent);
+    cursor: pointer;
+  }
+  .events .event:hover {
+    background: linear-gradient(90deg, var(--primary-clr), transparent);
+  }
+  .events .event .tittel {
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+  }
+  .events .event .tittel .event-tittel {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-left: 20px;
+  }
+  .events .event i {
+    color: var(--primary-clr);
+    font-size: 0.5rem;
+  }
+  .events .event:hover i {
+    color: #fff;
+  }
+  .events .event .event-time {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #878895;
+    margin-left: 15px;
+    pointer-events: none;
+  }
+  .events .event:hover .event-time {
+    color: #fff;
+  }
+  /* Knappen for å fjerne hendelsene */
+  .events .event::after {
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    font-size: 3rem;
+    line-height: 1;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.3;
+    color: var(--primary-clr);
+    transform: translateY(-50%);
+  }
+  .events .event:hover::after {
+    display: flex;
+  }
+  /* klapp for å legge til hendelse */
+  .leggTil-event {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: #878895;
+    border: 2px solid #878895;
+    opacity: 0.5;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .leggTil-event:hover {
+    opacity: 1;
+    background-color: transparent;
+  }
+  /* De dagene der det ikke er hendelser */
+  .events .no-event {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #878895;
+  }
+  /* Det som kommer opp når man trykker på legg til hendelse knappen */
+  .leggTil-event-wrapper {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    width: 90%;
+    max-height: 0;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: #FFFF;
+    transform: translateX(-50%);
+    transition: max-height 0.5s ease;
+  }
+  .leggTil-event-wrapper.active {
+    max-height: 300px;
+  }
+  /* Headeren i wrapperen */
+  .leggTil-event-header {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    color: #31525B;
+    border-bottom: 1px solid #f5f5f5;
+  }
+  /* Lukke knappen til wrapperen */
+  .leggTil-event-header .lukk {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  /* tittelen til wrapperen */
+  .leggTil-event-header .tittel {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  /* bodyen til wrapperen */
+  .leggTil-event-body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 20px;
+  }
+  .leggTil-event-body .leggTil-event-input {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .leggTil-event-body .leggTil-event-input input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #f5f5f5;
+    padding: 0 10px;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #31525B;
+  }
+  .leggTil-event-body .leggTil-event-input input::placeholder {
+    color: #8b8986;
+  }
+  .leggTil-event-body .legTil-event-input input:focus {
+    border-bottom: 1px solid var(--primary-clr);
+  }
+  /* footeren til wrapperen */
+  .leggTil-event-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .leggTil-event-footer .leggTil-event-btn {
+    height: 40px;
+    font-size: 1rem;
+    font-weight: 500;
+    outline: none;
+    border: none;
+    color: #fff;
+    background-color: var(--primary-clr);
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid var(--primary-clr);
+  }
+  /* lister*/
+  #prøver-liste{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    }
+li {
+    padding: 10px;
+    background-color: #f2f2f2;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+li:hover {
+    background-color: #ddd;
+    }
+li button {
+    background-color: var(--primary-clr);
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: 0.3s;
+}
+li button:hover {
+    background-color: #cf880c;
+}
+/* Tabell */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #c0beb9;
+  }
+  td, th {
+    border: 1px solid #ddd;
+    padding: 5px;
+    text-align: left;
+    font-size: 14px;
+  }
+  tr {
+    height: 50px;
+  }
+  h2{
+    font-size: 23px;
+    padding-bottom: 5%;
+    padding-top: 25px;
+  }
+  p{
+    padding-bottom: 30px;
+    padding-top: 20px;
+  }
+  input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      font-size: 18px;
+      border-radius: 5px 0 0 5px;
+      border: none;
+      }
+    form {
+        display: flex;
+        margin-bottom: 2%;
+     }
+  button, .delete {
+      background-color: var(--primary-clr);
+      color: white;
+      padding: 10px 20px;
+      font-size: 18px;
+      border-radius: 0 5px 5px 0;
+      border: none;
+      cursor: pointer;
+      }
+  button:hover, .delete:hover {
+      background-color: #cf880c;
+      }
+/* Navbar */
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #31525B;
+    padding: 27px;
+    border-radius: 10px;
+    margin: 10px;
+    margin-top: 40px;
+    margin-left: 10%;
+    margin-right: 15%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    margin-bottom: 2%;
+    font-size: 20px;
+  }
+  nav a {
+    text-decoration: none;
+    color: #e2e1dc;
+  }
+  .sidesider a{
+    padding: 0 10px 0 10px;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+  }
+  .index{
+    font-family: 'Roboto Mono', monospace;
+}
+  .sidesider a::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 0.7px;
+    bottom: -1px;
+    left: 0;
+    background-color: #e2e1dc;
+    transition: width 0.2s ease-in-out;
+  }
+  .sidesider a:hover::before {
+    width: 100%;
+  }
+  /* footer */
+footer {
+    position: relative;
+    background-color: #31525B;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #e2e1dc;
+  }
+.undersider{
+    position: absolute;
+}
+  .footer-left {
+    display: flex;
+    align-items: center;
+  }
+  .footer-left h3 {
+    margin-right: 20px;
+  }
+  .footer-left a {
+    text-decoration: none;
+    margin-right: 20px;
+    color: #e2e1dc;
+  }
+  .footer-right {
+    display: flex;
+    align-items: center;
+  }
+  .footer-right p {
+    margin-right: 20px;
+  }
+    /* Media queries */
+        @media screen and (max-width: 1000px) {
+            body {
+                  align-items: flex-start;
+                  justify-content: flex-start;
+            }
+            .container {
+                  min-height: 100vh;
+                  flex-direction: column;
+                  border-radius: 0;
+            }
+            /* høyre side */
+            .container .høyre {
+                  width: 100%;
+                  height: 100%;
+                  padding: 20px 0;
+            }
+                .container .venstre {
+                  width: 100%;
+                  height: 100%;
+                  padding: 20px 0;
+                }
+                .kalender::before,
+                .kalender::after {
+                  top: 100%;
+                  left: 50%;
+                  width: 97%;
+                  height: 12px;
+                  border-radius: 0 0 5px 5px;
+                  transform: translateX(-50%);
+                }
+                .kalender::before {
+                  width: 94%;
+                  top: calc(100% + 12px);
+                }
+                .events {
+                  padding-bottom: 340px;
+                }
+                .leggTil-event-wrapper {
+                  bottom: 100px;
+                }
+              }
+            
+              @media (max-width: 650px){
+                nav{
+                    flex-direction: column;
+                    align-items: center;
+                }
+                .index{
+                    padding-bottom: 8px;
+                }
+                }
+              @media screen and (max-width: 500px) {
+                .kalender .month {
+                  height: 75px;
+                }
+                .kalender .ukedger {
+                  height: 50px;
+                }
+                .kalender .dager .dag {
+                  height: 40px;
+                  font-size: 0.8rem;
+                }
+                .kalender .dager .dag.active,
+                .kalender .dager .dag.today {
+                  font-size: 1rem;
+                }
+                .venstre .idag-dato {
+                  padding: 20px;
+                }
+                nav{
+                    flex-direction: column;
+                    align-items: center;
+                }
+                .index{
+                    padding-bottom: 6px;
+                }
+                .sidesider{
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: -60%;
+                }
+                .sidesider a{
+                    margin-bottom: 5px;
+                }
+              }

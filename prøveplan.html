@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prøveplan</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@300&family=Roboto+Mono&family=Roboto+Slab:wght@300&family=Roboto:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+	<nav>
+        <a href="index.html" class="index">Mitt liv</a>
+
+        <div class="sidesider">
+            <a href="to-do.html">To-do liste</a>
+            <a href="#">Prøveplan</a>
+            <a href="timeplan.html">Timeplan</a>
+        </div>
+    </nav>
+
+	<div class="containerInput">
+		<form class="prøveplan">
+			<input type="text" id="fag" name="fag" required class="prøver" placeholder="Skriv fag her">
+			<input type="date" id="dato" name="dato" required class="prøver">
+
+			<button type="button" onclick="leggTilPrøve()" class="prøver">Legg til</button>
+		</form>
+
+		<h2>Fremtidige prøver:</h2>
+		<ul id="prøver-liste"></ul>
+	</div>
+	<footer class="undersider">
+		<!-- Venstre side av footeren -->
+		<div class="footer-left">
+		  <h3>Sara Alvestad Isla</h3>
+		  <a href="https://viken.no/nadderud-vgs/">Nadderud VGS</a>
+		</div>
+	  
+		<!-- Høyre side av footeren -->
+		<div class="footer-right">
+		  <p>2023</p>
+		</div>
+	  </footer>
+	<script src="prøveplan.js"></script>
+</body>
+</html>

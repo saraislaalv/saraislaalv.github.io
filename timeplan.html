@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeplan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@300&family=Roboto+Mono&family=Roboto+Slab:wght@300&family=Roboto:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="index">Mitt liv</a>
+
+        <div class="sidesider">
+            <a href="to-do.html">To-do liste</a>
+            <a href="prøveplan.html">Prøveplan</a>
+            <a href="#">Timeplan</a>
+        </div>
+    </nav>
+
+        <div class="containerInput">
+            <p>Velg dag:</p>
+              <input type="date" id="datePicker">
+              <p id="ukedag"></p>
+
+              <table class="timeplan">
+                <tr id="økt1">
+                    <td>Økt 1:</td>
+                    <td class="økt1fag">Fag</td>
+                    <td class="økt1lærer">Lærer</td>
+                    <td class="økt1rom">Rom</td>
+                </tr>
+                <tr id="økt2">
+                    <td>Økt 2:</td>
+                    <td class="økt2fag">Fag</td>
+                    <td class="økt2lærer">Lærer</td>
+                    <td class="økt2rom">Rom</td>
+                </tr>
+                <tr id="økt3">
+                    <td>Økt 3:</td>
+                    <td class="økt3fag">Fag</td>
+                    <td class="økt3lærer">Lærer</td>
+                    <td class="økt3rom">Rom</td>
+                </tr>
+                <tr id="økt4">
+                    <td>Økt 4:</td>
+                    <td class="økt4fag">Fag</td>
+                    <td class="økt4lærer">Lærer</td>
+                    <td class="økt4rom">Rom</td>
+                </tr>
+              </table>
+            </div>
+            <footer class="undersider">
+                <!-- Venstre side av footeren -->
+                <div class="footer-left">
+                  <h3>Sara Alvestad Isla</h3>
+                  <a href="https://viken.no/nadderud-vgs/">Nadderud VGS</a>
+                </div>
+              
+                <!-- Høyre side av footeren -->
+                <div class="footer-right">
+                  <p>2023</p>
+                </div>
+              </footer>
+        <script src="timeplan.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@300&family=Roboto+Mono&family=Roboto+Slab:wght@300&family=Roboto:wght@100&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Mitt liv</title>
+  </head>
+  <body>
+
+    <nav>
+      <a href="index.html" class="index">Mitt liv</a>
+
+      <div class="sidesider">
+          <a href="to-do.html">To-do liste</a>
+          <a href="prøveplan.html">Prøveplan</a>
+          <a href="timeplan.html">Timeplan</a>
+      </div>
+  </nav>
+
+    <main>
+    <div class="container">
+
+      <div class="venstre">
+        <div class="idag-dato">
+          <div class="event-dag"></div>
+          <div class="event-dato">12 april 2023</div>
+        </div>
+        <div class="events"></div>
+        <div class="leggTil-event-wrapper">
+          <div class="leggTil-event-header">
+            <div class="tittel">Legg til hendelse</div>
+            <i class="fas fa-times lukk"></i>
+          </div>
+          <div class="leggTil-event-body">
+            <div class="leggTil-event-input">
+              <input type="text" placeholder="Navn" class="event-navn" />
+            </div>
+            <div class="LeggTil-event-input">
+              <input
+                type="text"
+                placeholder="Starttid"
+                class="event-tid-fra"
+              />
+            </div>
+            <div class="LeggTil-event-input">
+              <input
+                type="text"
+                placeholder="Sluttid"
+                class="event-tid-til"
+              />
+            </div>
+          </div>
+          <div class="leggTil-event-footer">
+            <button class="leggTil-event-btn">Legg til hendelse</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="høyre">
+        <div class="kalender">
+          <div class="month">
+            <i class="fas fa-angle-left forrige"></i>
+            <div class="dato">Mai 2023</div>
+            <i class="fas fa-angle-right neste"></i>
+          </div>
+          <div class="ukedager">
+            <div>Søn</div>
+            <div>Man</div>
+            <div>Tir</div>
+            <div>Ons</div>
+            <div>Tor</div>
+            <div>Fre</div>
+            <div>Lør</div>
+          </div>
+          <div class="dager"></div>
+          <div class="idag">
+            <button class="idag-btn">I dag</button>
+          </div>
+        </div>
+      </div>
+      
+      <button class="leggTil-event">
+        <i class="fas fa-plus"></i>
+      </button>
+    </div>
+    </main>
+
+    <footer>
+      <!-- Venstre side av footeren -->
+      <div class="footer-left">
+        <h3>Sara Alvestad Isla</h3>
+        <a href="https://viken.no/nadderud-vgs/">Nadderud VGS</a>
+      </div>
+    
+      <!-- Høyre side av footeren -->
+      <div class="footer-right">
+        <p>2023</p>
+      </div>
+    </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
